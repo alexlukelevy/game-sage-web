@@ -15,7 +15,6 @@ import {
 } from 'searchkit';
 import connection from '../connection';
 import HitItem from './HitItemContainer';
-import Similar from './SimilarContainer';
 
 
 export default function App() {
@@ -23,6 +22,7 @@ export default function App() {
     <SearchkitProvider searchkit={connection}>
       <Layout>
         <TopBar>
+          <span style={{ fontSize: 28, margin: '0 1em', color: '#FFFFFF' }}>Game Sage</span>
           <SearchBox
             autofocus
             searchOnChange
@@ -37,16 +37,11 @@ export default function App() {
                 <HitsStats />
               </ActionBarRow>
             </ActionBar>
-            <Hits mod="sk-hits-grid" hitsPerPage={10} itemComponent={HitItem} />
+            <Hits mod="sk-hits-grid" hitsPerPage={30} itemComponent={HitItem} />
             <NoHits />
             <Pagination showNumbers />
           </LayoutResults>
-          <LayoutResults>
-            <Similar />
-          </LayoutResults>
         </LayoutBody>
-        {/*<LayoutBody>*/}
-        {/*</LayoutBody>*/}
       </Layout>
     </SearchkitProvider>
   );

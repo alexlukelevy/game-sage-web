@@ -10,6 +10,15 @@ h3 {
 
 .gs .sk-results-list {
   width: 50%;
+  padding: 15px 100px;
+}
+
+.gs .sk-layout__body {
+  min-height: calc(100vh - 60px);
+}
+
+.gs .sk-hits-stats {
+  margin: 0 7px;
 }
 
 .gs-icon {

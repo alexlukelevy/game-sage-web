@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from './components/App';
 import reducers from './state/reducers';
 import registerServiceWorker from './registerServiceWorker';
@@ -15,7 +16,9 @@ const store = createStore(reducers, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('root'),
 );

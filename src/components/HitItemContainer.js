@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { selectGame } from '../state/ui/uiActions';
 import HitItem from './HitItem';
 
+// TODO: delete file
 function mapStateToProps(state, ownProps) {
   return {
   // eslint-disable-next-line no-underscore-dangle
