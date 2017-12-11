@@ -12,7 +12,7 @@ import {
   SearchBox,
   TopBar,
 } from 'searchkit';
-import HitItem from '../HitItem/HitItem';
+import HitItem from '../HitItem/HitItemContainer';
 import App from './App';
 
 describe('App', () => {

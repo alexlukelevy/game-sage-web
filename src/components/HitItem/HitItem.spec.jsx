@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import { Card, CardHeader } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
@@ -11,6 +12,8 @@ describe('HitItem', () => {
   let props;
   beforeEach(() => {
     props = {
+      expanded: true,
+      onExpandChange: sinon.spy(),
       result: {
         _source: {
           name: 'Horizon: Zero Dawn',
@@ -36,6 +39,8 @@ describe('HitItem', () => {
     const card = component.find(Card);
 
     expect(card).to.be.present();
+    expect(card).to.have.prop('expanded', props.expanded);
+    expect(card).to.have.prop('onExpandChange', props.onExpandChange);
     expect(card.props().style).to.deep.equal({
       width: 300,
       margin: '0.5em',

@@ -1,3 +1,4 @@
 export default {
   SELECT_GAME: 'SELECT_GAME',
+  DESELECT_GAME: 'DESELECT_GAME',
 };

@@ -1,13 +1,33 @@
-import { handleAction } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import uiActionTypes from './uiActionTypes';
 
-function reducer(state, { payload }) {
-  return payload;
+function selectReducer(state, { payload }) {
+  return {
+    ...state,
+    selectedGames: {
+      ...state.selectedGames,
+      [payload]: true,
+    },
+  };
 }
 
-export default handleAction(uiActionTypes.SELECT_GAME, reducer,
+function deselectReducer(state, { payload }) {
+  const { [payload]: deleted, ...remaining } = state.selectedGames;
+
+  return {
+    ...state,
+    selectedGames: {
+      ...remaining,
+    },
+  };
+}
+
+export default handleActions(
   {
-    name: '',
-    similar: [],
+    [uiActionTypes.SELECT_GAME]: selectReducer,
+    [uiActionTypes.DESELECT_GAME]: deselectReducer,
+  },
+  {
+    selectedGames: {},
   },
 );

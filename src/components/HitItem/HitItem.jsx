@@ -22,9 +22,9 @@ const styles = {
   },
 };
 
-export default function HitItem({ result: { _source } }) {
+export default function HitItem({ expanded, onExpandChange, result: { _source } }) {
   return (
-    <Card style={styles.card}>
+    <Card style={styles.card} expanded={expanded} onExpandChange={onExpandChange}>
       <CardHeader
         title={_source.name}
         avatar={_source.icon}
@@ -52,6 +52,8 @@ export default function HitItem({ result: { _source } }) {
 }
 
 HitItem.propTypes = {
+  expanded: PropTypes.bool.isRequired,
+  onExpandChange: PropTypes.func.isRequired,
   result: PropTypes.shape({
     _source: PropTypes.shape({
       name: PropTypes.string.isRequired,

@@ -1,2 +1,5 @@
-# game-sage-web
-Front-end for Game Sage
+# Game Sage
+
+A simplistic React front-end to the Game Sage elasticsearch data.
+
+![screenshot](./screenshot.png)

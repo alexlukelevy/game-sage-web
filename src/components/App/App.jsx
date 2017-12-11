@@ -14,7 +14,7 @@ import {
   TopBar,
 } from 'searchkit';
 import connection from '../../config/connection';
-import HitItem from '../HitItem/HitItem';
+import HitItem from '../HitItem/HitItemContainer';
 
 
 export default function App() {
