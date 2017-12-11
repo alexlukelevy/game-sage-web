@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import App from './components/App';
+import App from './components/App/App';
 import reducers from './state/reducers';
 import registerServiceWorker from './registerServiceWorker';
 import './style/index';

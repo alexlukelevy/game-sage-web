@@ -13,8 +13,8 @@ import {
   SearchkitProvider,
   TopBar,
 } from 'searchkit';
-import connection from '../connection';
-import HitItem from './HitItemContainer';
+import connection from '../../config/connection';
+import HitItem from '../HitItem/HitItem';
 
 
 export default function App() {

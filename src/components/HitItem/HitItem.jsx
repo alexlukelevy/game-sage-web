@@ -13,6 +13,10 @@ const styles = {
   subheader: {
     padding: 0,
   },
+  similar: {
+    display: 'flex',
+    margin: '0.5em 0',
+  },
   img: {
     width: 24,
   },
@@ -32,12 +36,12 @@ export default function HitItem({ result: { _source } }) {
         <Subheader style={styles.subheader}>SIMILAR GAMES</Subheader>
         {
           _source.similar.map(game => (
-            <div key={game.name} style={{ display: 'flex', margin: '0.5em 0' }}>
+            <div key={game.name} style={styles.similar}>
               <div className="gs-icon">
                 <img src={game.icon} alt={game.name} style={styles.img} />
               </div>
               <div>
-                <span >{game.name}</span>
+                <span>{game.name}</span>
               </div>
             </div>
           ))
